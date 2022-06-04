@@ -13,7 +13,7 @@ window.addEventListener("load", start());
 
 function start() {
   for (i = 0; i < 25; i++) {
-    const colors = ["red", "blue", "yellow", "black", "green", "orange"];
+    colors = ["red", "blue", "yellow", "black", "green", "orange"];
     randomColor = Math.floor(Math.random() * colors.length);
     myColor = colors[randomColor];
     balon = document.createElement("li");
@@ -21,6 +21,7 @@ function start() {
     balon.style.backgroundColor = myColor;
     balon.style.color = myColor;
     ballons.append(balon);
+    balon.innerHTML = "POP";
   }
 }
 
@@ -29,11 +30,12 @@ yeniBalon.forEach((item) => {
   item.addEventListener("mouseover", showNumber);
 
   function showNumber() {
-    this.style.backgroundColor = "transparent";
-    this.innerHTML = "POP";
-    count++;
-    showDelete();
-    myAudio();
+    if (this.style.backgroundColor !== "transparent") {
+      this.style.backgroundColor = "transparent";
+      myAudio();
+      count++;
+      showDelete();
+    }
   }
 
   function showDelete() {
@@ -42,12 +44,12 @@ yeniBalon.forEach((item) => {
       ballons.style.display = "none";
     }
   }
-
-  function myAudio() {
-    var audio = new Audio("./bubble.mp3");
-    audio.play();
-  }
 });
 function newGame() {
   window.location.reload();
+}
+
+function myAudio() {
+  var audio = new Audio("./bubble.mp3");
+  audio.play();
 }
