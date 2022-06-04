@@ -1,0 +1,85 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  display: grid;
+  place-items: center;
+  width: 100vw;
+  background-color: rgb(0, 0, 0);
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+.container {
+  display: grid;
+  place-items: center;
+  width: 500px;
+  height: 500px;
+  margin-top: 3rem;
+  background-color: rgba(233, 180, 236, 0.995);
+  border-radius: 10px;
+}
+.balon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  list-style: none;
+  cursor: pointer;
+  padding: 1rem;
+  transition: all 400ms;
+}
+.ballons {
+  width: 90%;
+  display: grid;
+  place-items: center;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  row-gap: 1rem;
+}
+.result {
+  display: none;
+  place-items: center;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  text-align: center;
+  color: rgb(54, 118, 73);
+  margin-top: -300px;
+}
+h2 {
+  font-size: 2rem;
+  color: rgb(46, 51, 51);
+  margin-bottom: 2rem;
+}
+#gameBtn {
+  margin-top: 3rem;
+  padding: 1rem;
+  width: 40%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  background-color: rgb(43, 98, 143);
+  color: white;
+  border-radius: 10px;
+  transition: all 500ms;
+  border: none;
+}
+#gameBtn:hover {
+  background-color: rgb(43, 143, 60);
+}
+#sound {
+  margin-top: 1rem;
+  padding: 0.3rem;
+  width: 10%;
+  font-size: 12px;
+  cursor: pointer;
+  background-color: rgb(43, 98, 143);
+  color: white;
+  border-radius: 10px;
+  transition: all 500ms;
+  border: none;
+}
+#sound:focus {
+  background-color: rgb(43, 143, 60);
+}
